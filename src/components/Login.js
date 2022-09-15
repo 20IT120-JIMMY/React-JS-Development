@@ -5,7 +5,29 @@ import Form from 'react-bootstrap/Form';
 
 export default function Login() {
 
-    
+    // Hooks
+    // states
+    const [username, setUsername] = useState();
+    const [password, setPassword] = useState();
+    // onChange function
+    let textChanged = (event) => {
+        event.preventDefault();
+        if (event.target.name === "username") {
+            setUsername(event.target.value);
+          } else if (event.target.name === "password") {
+            setPassword(event.target.value);
+          }
+    }
+    // onSubmit
+    // axios
+    let doLogin = (event) => {
+        event.preventDefault();
+        axios.post("http://localhost:8080/login", {username, password},{withCredentials:true})
+        .then(response=>console.log(response.data))
+        .catch(error=>error);
+    }
+
+
   return (
     <div>
       <Form onSubmit={doLogin}>
