@@ -27,6 +27,20 @@ function App() {
       <Router>
         <NavigationBar />
         <MyAlert alert={alert} />
+        <Container>
+          <Routes>
+            <Route path="student" element={<Student showAlert={showAlert} />} />
+            <Route
+              path="student/:studentId"
+              element={<Student showAlert={showAlert} />}
+            />
+            <Route
+              path="listStudents"
+              element={<StudentList showAlert={showAlert} />}
+            />
+            <Route path="login" element={<Login showAlert={showAlert} />} />
+          </Routes>
+        </Container>
         <Footer />
       </Router>
     </div>
