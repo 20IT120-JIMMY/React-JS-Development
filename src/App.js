@@ -8,6 +8,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import MyAlert from "./components/MyAlert";
 import { useState } from "react";
 import Login from "./components/Login";
+import Register from "./components/Register";
 
 function App() {
   const [alert, setAlert] = useState(null);
@@ -39,6 +40,7 @@ function App() {
               element={<StudentList showAlert={showAlert} />}
             />
             <Route path="login" element={<Login showAlert={showAlert} />} />
+            <Route path="register" element={<Register showAlert={showAlert} />} />
           </Routes>
         </Container>
         <Footer />
